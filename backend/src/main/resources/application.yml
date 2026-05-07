@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: ai-interview-backend
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/interview}
+    username: ${SPRING_DATASOURCE_USERNAME:interview}
+    password: ${SPRING_DATASOURCE_PASSWORD:changeme}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc.time_zone: UTC
+        format_sql: false
+    open-in-view: false
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+  data:
+    redis:
+      host: ${SPRING_DATA_REDIS_HOST:localhost}
+      port: ${SPRING_DATA_REDIS_PORT:6379}
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:dev-only-secret-change-in-production-please-32b}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+  ai:
+    base-url: ${AI_SERVICE_URL:http://localhost:8000}
+  cors:
+    allowed-origins: "http://localhost:5173,http://localhost:3000"
+
+logging:
+  level:
+    root: INFO
+    com.aiinterview: DEBUG
+    org.springframework.security: INFO
