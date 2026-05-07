@@ -165,7 +165,7 @@ docker compose up -d --build
 
 İlk açılışta yapılanlar:
 
-- Tüm imajlar build edilir (~5-10 dk).
+- Tüm imajlar build edilir .
 - PostgreSQL ayağa kalkar, Flyway V1 ve V2 migration'larını uygular.
 - AI servisi açılır ve ilk istekte HuggingFace modellerini indirir
   (`hf_cache` volume'una; ~1.5 GB, sonraki başlatmalarda hızlı).
@@ -338,7 +338,4 @@ Bu repo geliştirme amaçlıdır. Production'a almadan önce mutlaka:
 Daha kapsamlı production kontrol listesi için `docs/DEPLOYMENT.md`
 dosyasına bakın.
 
-## Lisans
 
-Henüz lisans belirtilmedi. Repo public ise dilediğiniz lisansı (MIT,
-Apache-2.0, GPL-3.0 vb.) eklemeyi unutmayın.
